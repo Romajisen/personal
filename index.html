@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panji Swahastika - Full Stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1E3A8A;
+            --secondary: #F59E0B;
+            --dark: #0F172A;
+            --light: #F8FAFC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Header Styles */
+        nav {
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: var(--secondary);
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            margin: 2rem 0;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 4rem 5%;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        /* Portfolio Filter */
+        .portfolio-filter {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--primary);
+            background: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline::after {
+                left: 20px;
+            }
+        }
+    
+        /* Tambahkan style sebelumnya di sini */
+        
+        /* Updated Timeline Style */
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            left: 50%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .tech-tags span {
+            display: inline-block;
+            background: #F59E0B20;
+            color: #F59E0B;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin: 5px 3px;
+            font-size: 0.9em;
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as before) -->
+    <nav>
+        <a href="#" class="logo">PS</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="btn-download">Download CV</button>
+    </nav>
+    <!-- Hero Section (same as before) -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Panji Swahastika</h1>
+            <p>Full-Stack Developer & Microsoft 365 Solutions Architect</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="skills-grid">
+        <div class="skill-card">
+            <h3><i class="fas fa-code"></i> Programming</h3>
+            <div class="tech-tags">
+                <span>C#/VB.NET</span>
+                <span>Angular</span>
+                <span>Node.js</span>
+                <span>PHP</span>
+                <span>Golang</span>
+                <span>TypeScript</span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3><i class="fas fa-database"></i> Databases</h3>
+            <div class="tech-tags">
+                <span>MSSQL</span>
+                <span>Oracle</span>
+                <span>MySQL</span>
+                <span>NoSQL</span>
+                <span>MariaDB</span>
+                <span>Firebird</span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+            <div class="tech-tags">
+                <span>Docker</span>
+                <span>GitLab CI/CD</span>
+                <span>Hyper-V</span>
+                <span>VMWare</span>
+                <span>Power Automate</span>
+                <span>Azure</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="timeline">
+        <!-- PT Yihquan Footwear Indonesia -->
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <h3>IT Developer @ PT Yihquan Footwear Indonesia</h3>
+                <p class="duration">Aug 2024 - Nov 2024</p>
+                <ul>
+                    <li>Mengurangi waktu respon sistem 30% dengan backend Golang</li>
+                    <li>Mengotomatiskan deployment menggunakan GitLab CI/CD</li>
+                    <li>Mengurangi konsumsi resource server 25% dengan Docker</li>
+                </ul>
+                <div class="tech-tags">
+                    <span>Golang</span>
+                    <span>Vue.js</span>
+                    <span>Docker</span>
+                    <span>GitLab CI/CD</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PT Kino Indonesia Tbk -->
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <h3>IT Developer @ PT Kino Indonesia Tbk</h3>
+                <p class="duration">Feb 2018 - Jun 2024</p>
+                <ul>
+                    <li>Mengoptimalkan performa aplikasi (40% lebih cepat)</li>
+                    <li>Mengimplementasi sistem paperless approval (hemat $50k/tahun)</li>
+                    <li>Mengembangkan 15+ sistem internal</li>
+                </ul>
+                <div class="tech-tags">
+                    <span>ASP.NET</span>
+                    <span>PowerApps</span>
+                    <span>Node.js</span>
+                    <span>SAP Integration</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PT Asia Pacific Fibers Tbk -->
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <h3>IT Analyst & Project Lead @ PT Asia Pacific Fibers Tbk</h3>
+                <p class="duration">Sep 2012 - Feb 2018</p>
+                <ul>
+                    <li>Mengurangi waktu proses data 35%</li>
+                    <li>Memimpin migrasi sistem legacy</li>
+                    <li>Membangun sistem CRM dan KPI</li>
+                </ul>
+                <div class="tech-tags">
+                    <span>VB6</span>
+                    <span>ASP.NET</span>
+                    <span>Oracle</span>
+                    <span>MySQL</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PT Nextmercury Indonesia -->
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <h3>IT Developer @ PT Nextmercury Indonesia</h3>
+                <p class="duration">Feb 2009 - Nov 2011</p>
+                <ul>
+                    <li>Meningkatkan keamanan sistem 50%</li>
+                    <li>Mengembangkan website perusahaan</li>
+                    <li>Integrasi sistem ERP</li>
+                </ul>
+                <div class="tech-tags">
+                    <span>Delphi</span>
+                    <span>PHP</span>
+                    <span>Firebird</span>
+                    <span>ASP Classic</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Projects Section -->
+    <section id="portfolio">
+        <div class="portfolio-filter">
+            <!-- Filter buttons -->
+        </div>
+        
+        <div class="portfolio-grid">
+            <!-- Individual Projects -->
+            <div class="project-card" data-category="individual">
+                <h3>Kino Approvals System</h3>
+                <div class="tech-tags">
+                    <span>PowerApps</span>
+                    <span>SharePoint</span>
+                    <span>Power Automate</span>
+                </div>
+                <p class="project-desc">
+                    Sistem persetujuan digital yang mengeliminasi proses paperwork,
+                    menghemat 150 juta rupiah per tahun dalam biaya operasional.
+                </p>
+                <div class="achievement">
+                    <i class="fas fa-trophy"></i>
+                    <span>Best Digital Transformation Award 2023</span>
+                </div>
+                <img src="path/to/kino-approvals-system.jpg" alt="Kino Approvals System Screenshot" class="project-screenshot">
+            </div>
+
+            <div class="project-card" data-category="individual">
+                <h3>5R System</h3>
+                <div class="tech-tags">
+                    <span>AngularJS</span>
+                    <span>PHP</span>
+                    <span>MSSQL</span>
+                </div>
+                <p class="project-desc">
+                    Sistem manajemen 5R digital meningkatkan kepatuhan karyawan sebesar 65%
+                    melalui antarmuka yang user-friendly.
+                </p>
+                <img src="path/to/5r-system.jpg" alt="5R System Screenshot" class="project-screenshot">
+            </div>
+
+            <!-- Team Projects -->
+            <div class="project-card" data-category="team">
+                <h3>E-Procurement System</h3>
+                <div class="tech-tags">
+                    <span>Golang</span>
+                    <span>Vue.js</span>
+                    <span>Docker</span>
+                </div>
+                <p class="project-desc">
+                    Platform tender digital yang meningkatkan partisipasi vendor sebesar 40%
+                    dengan proses bidding yang transparan.
+                </p>
+                <div class="achievement">
+                    <i class="fas fa-users"></i>
+                    <span>Tim 5 Developer</span>
+                </div>
+                <img src="path/to/e-procurement-system.jpg" alt="E-Procurement System Screenshot" class="project-screenshot">
+            </div>
+
+            <div class="project-card" data-category="team">
+                <h3>Sport Center Registration</h3>
+                <div class="tech-tags">
+                    <span>ASP.NET MVC</span>
+                    <span>MSSQL</span>
+                    <span>Power BI</span>
+                </div>
+                <p class="project-desc">
+                    Sistem booking fasilitas olahraga perusahaan dengan integrasi kalender
+                    dan reporting real-time.
+                </p>
+                <img src="path/to/sport-center-registration.jpg" alt="Sport Center Registration Screenshot" class="project-screenshot">
+            </div>
+
+            <!-- Microsoft 365 Projects -->
+            <div class="project-card" data-category="microsoft">
+                <h3>RPA Cost Delivery Report</h3>
+                <div class="tech-tags">
+                    <span>Power Automate</span>
+                    <span>SAP Integration</span>
+                    <span>Excel Automation</span>
+                </div>
+                <p class="project-desc">
+                    Otomasi laporan biaya pengiriman mengurangi waktu proses manual dari 2 jam
+                    menjadi 15 menit per laporan.
+                </p>
+                <img src="path/to/rpa-cost-delivery-report.jpg" alt="RPA Cost Delivery Report Screenshot" class="project-screenshot">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="contact-section">
+        <h2>Kontak</h2>
+        <form id="contact-form">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Kirim</button>
+        </form>
+        <div id="form-response"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="profile-img"></div>
+        <div class="about-content">
+            <h2>Tentang Saya</h2>
+            <p class="summary">
+                IT Specialist berpengalaman dengan lebih dari 15 tahun di industri Textile, FMCG, dan manufaktur.
+                Spesialis dalam pengembangan solusi Microsoft 365 dan aplikasi full-stack. Memiliki track record
+                dalam meningkatkan efisiensi operasional melalui otomasi dan optimasi sistem.
+            </p>
+            
+            <div class="achievement-badges">
+                <div class="badge">
+                    <i class="fas fa-bolt" style="color: #F59E0B;"></i>
+                    <span>+40% Performa Aplikasi</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-coins" style="color: #10B981;"></i>
+                    <span>Hemat $50k/tahun</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-project-diagram" style="color: #3B82F6;"></i>
+                    <span>30+ Proyek Terselesaikan</span>
+                </div>
+            </div>
+
+            <h3>Keahlian Teknis</h3>
+            <div class="tech-tags">
+                <span>Microsoft 365</span>
+                <span>.NET Framework</span>
+                <span>CI/CD Pipelines</span>
+                <span>Cloud Integration</span>
+                <span>Database Optimization</span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Tambahkan script sebelumnya di sini
+        
+        // Timeline Animation
+        window.addEventListener('scroll', () => {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            timelineItems.forEach(item => {
+                const itemTop = item.getBoundingClientRect().top;
+                if(itemTop < window.innerHeight * 0.8) {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }
+            });
+        });
+
+        // Initial animation state
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-30px)';
+            item.style.transition = 'all 0.6s ease-out';
+        });
+    </script>
+</body>
+<footer>
+    sikil
+</footer>
+</html>
